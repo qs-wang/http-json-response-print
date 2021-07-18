@@ -1,7 +1,7 @@
 {
   "description": "Altering HTTP responses",
   "manifest_version": 2,
-  "name": "http-response-filter",
+  "name": "http-json-response-print",
   "version": "1.0",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/http-response",
   "icons": {
@@ -11,7 +11,7 @@
     "webRequest",
     "webRequestBlocking",
     "storage",
-    "*://*.coolead.com/*"
+    "*://*.xxxx.com/*"
   ],
   "background": {
     "scripts": [
