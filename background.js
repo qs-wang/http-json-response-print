@@ -23,11 +23,16 @@ function transformResponseToJSON(url, details) {
 
   filter.onstop = (_event) => {
     try {
+      contentObject = JSON.parse(content)
+      if (contentObject.message && contentObject.message.length > 0) {
+        contentObject.message =
+          JSON.parse(contentObject.message.substring(0, contentObject.message.length - 2));
+      }
       console.info({
-        [url]: JSON.parse(content)
+        [url]: contentObject
       });
     } catch (e) {
-
+      console.error(e);
     }
 
     filter.write(enc.encode(content));
